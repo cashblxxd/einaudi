@@ -13,11 +13,11 @@ def starter():
                 flags[i] = k[i]
     message_queue = Queue()
     input_queue = Queue()
-    main_proc = Process(target=main_hull, args=(flags,input_queue,message_queue,token,))
+    main_proc = Process(target=main_hull, args=(flags, input_queue, message_queue, token,))
     handlers = []
     for i in range(5):
-        handlers.append(Process(target=handler_hull, args=(input_queue,message_queue,token,flags,)))
-    sender_proc = Process(target=sender, args=(message_queue,token,))
+        handlers.append(Process(target=handler_hull, args=(input_queue, message_queue, token, flags,)))
+    sender_proc = Process(target=sender, args=(message_queue, token,))
     main_proc.start()
     for i in handlers:
         i.start()

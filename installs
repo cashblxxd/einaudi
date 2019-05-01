@@ -1,3 +1,8 @@
 sudo pip3 install google-cloud google-cloud-storage google-cloud-speech google-cloud-translate vk_api google-cloud-texttospeech langdetect
+sudo snap install google-cloud-sdk --classic
 export GOOGLE_APPLICATION_CREDENTIALS="/home/bob/Downloads/einaudi/auth.json"
 touch prefs.jpg
+gcloud iam service-accounts create alicebot
+gcloud projects add-iam-policy-binding crack-lamp-232112 --member "serviceAccount:alicebot@crack-lamp-232112.iam.gserviceaccount.com" --role "roles/owner"
+gcloud iam service-accounts keys create auth.json --iam-account alicebot@crack-lamp-232112.iam.gserviceaccount.com
+look: https://cloud.google.com/docs/authentication/production#auth-cloud-implicit-python

@@ -7,7 +7,6 @@ def synthesis(text, lang='en', gender='m', filename='output.mp3'):
         'f': texttospeech.enums.SsmlVoiceGender.FEMALE,
         'n': texttospeech.enums.SsmlVoiceGender.NEUTRAL,
     }[gender]
-    print(gender)
     try:
         client = texttospeech.TextToSpeechClient()
         synthesis_input = texttospeech.types.SynthesisInput(text=text)
